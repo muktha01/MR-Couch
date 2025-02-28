@@ -1,0 +1,13 @@
+.mareeq {
+  display: flex;
+  animation: scrolling 12s linear infinite;
+}
+.marqueeitem {
+  flex: 0 0 16vw;
+  margin: 0 1vw;
+}
+@keyframes scrolling {
+  100% { 
+    transform: translateX(-200%);  
+  } 
+}

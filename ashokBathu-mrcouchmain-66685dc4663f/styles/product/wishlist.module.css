@@ -1,0 +1,134 @@
+/* Product card container */
+.productCard {
+  /* border: 1px solid #ccc; */
+  margin-bottom: 20px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  margin-top: 30px;
+  background-color: #ccc;
+  border-radius: 10px;
+}
+
+/* Product image */
+.productImage img {
+  width: 100%;
+  height: 370px;
+  object-fit: contain;
+  display: block;
+  transition: all 0.3s ease-in-out;
+  perspective: 1000px;
+}
+
+/* Product hover effect */
+.productHover {
+  position: absolute;
+  left: 0;
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  /* right:40%; */
+  left: 0;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: flex-end;
+  /* justify-content: center; */
+  flex-direction: column;
+  perspective: 1000px;
+}
+
+/* Product hover effect icons */
+.productHover div {
+  color: black;
+  font-size: 20px;
+  transition: 0.5s;
+  margin: 10px;
+}
+
+.productCard:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.productCard :hover .productHover {
+  top: 0;
+  right: 0;
+  left: 0;
+  opacity: 1;
+}
+
+.productCard:hover .images {
+  /* transform-origin: center right; */
+  /* animation: move 2s; */
+  perspective: 1000px;
+}
+
+/* Wishlist icon */
+.wishlist:hover {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Add to cart icon */
+.addtocart:hover {
+  cursor: pointer;
+}
+
+/* Compare icon */
+.compare:hover {
+  cursor: pointer;
+}
+
+/* View icon */
+.view:hover {
+  cursor: pointer;
+}
+
+/* Show product hover effect on hover */
+.productImage:hover .productHover {
+  opacity: 1;
+}
+
+/* Product details */
+.productDetails {
+  position: absolute;
+  opacity: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: 0.5s;
+  text-align: center;
+  color: #fff;
+}
+
+/* Product title */
+.productTitle {
+  font-size: 14px;
+  margin-bottom: 1px;
+  font-weight: bold;
+  text-align: start;
+}
+
+/* Product price */
+.productPrice {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 1px;
+  padding: 2px;
+  color: #000;
+}
+
+.productCard:hover .productDetails {
+  opacity: 1;
+  text-align: center;
+}
+
+@keyframes move {
+  0% {
+    transform: scaleY(0) scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1) scaleY(1);
+  }
+}

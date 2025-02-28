@@ -1,0 +1,100 @@
+.boxcontainer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 35px 15px;
+  width: 100%;
+}
+
+@media screen and (min-width: 1380px) {
+  .boxcontainer {
+    flex-direction: row;
+  }
+}
+
+.boxitem {
+  -webkit-backface-visibility: hidden;
+  position: relative;
+  width: 415px;
+  margin-bottom: 35px;
+  max-width: 100%;
+}
+
+.flipbox {
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+}
+
+.flipboxfront,
+.flipboxback {
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  min-height: 380px;
+  -ms-transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  -webkit-transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flipboxfront {
+  -ms-transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  height: "20px";
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.flipbox:hover .flipboxfront {
+  -ms-transform: rotateY(-180deg);
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.flipboxback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  -ms-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.flipbox:hover .flipboxback {
+  -ms-transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.flipboxinner {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 60px;
+  outline: 1px solid transparent;
+  -webkit-perspective: inherit;
+  perspective: inherit;
+  z-index: 2;
+  transform: translateY(-50%) translateZ(60px) scale(0.94);
+  -webkit-transform: translateY(-50%) translateZ(60px) scale(0.94);
+  -ms-transform: translateY(-50%) translateZ(60px) scale(0.94);
+  top: 50%;
+}
